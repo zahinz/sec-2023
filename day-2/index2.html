@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* INTERNAL STYLING */
+      /* insert CSS here */
+      /* class */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .parent {
+        height: 300px;
+        width: 300px;
+        background-color: lightblue;
+        position: relative;
+        background-color: lightblue;
+      }
+      .child {
+        height: 100px;
+        width: 100px;
+        background-color: blue;
+        position: absolute;
+        font-family: "Bebas Neue";
+      }
+      /* top, left, right, bottom */
+      .child-1 {
+        /* downward 0px */
+        top: 0px;
+        /* right 0px */
+        left: 0px;
+        background-color: yellow;
+        z-index: 3;
+      }
+      .child-2 {
+        /* downward 100px */
+        top: 50px;
+        /* right 100px */
+        left: 50px;
+        background-color: blue;
+        z-index: 2;
+      }
+      .child-3 {
+        /* downward 200px */
+        top: 100px;
+        /* right 200px */
+        left: 100px;
+        background-color: rgba(232, 44, 79, 1);
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- parent div 300 x 300, color light blue -->
+    <!-- children div 100 x 100, color blue x 3 -->
+    <div class="parent">
+      <!-- DRY : do not repeat -->
+      <!-- position -->
+      <div class="child child-1">1</div>
+      <div class="child child-2">2</div>
+      <div class="child child-3">3</div>
+    </div>
+  </body>
+</html>

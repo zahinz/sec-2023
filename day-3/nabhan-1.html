@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nabhan 1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      header {
+        background-color: yellow;
+        position: relative;
+        height: 40px;
+        padding: 10px;
+      }
+      .header-items {
+        display: inline-block;
+      }
+      .header-item-1 {
+        position: absolute;
+        left: 10px;
+      }
+      .header-item-2 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .header-item-3 {
+        position: absolute;
+        right: 10px;
+      }
+      li {
+        display: inline-block;
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-items header-item-1">1</div>
+      <ul class="header-items header-item-2">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+        <li>five</li>
+        <li>six</li>
+        <li>seven</li>
+      </ul>
+      <div class="header-items header-item-3">3</div>
+    </header>
+  </body>
+</html>

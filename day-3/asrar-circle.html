@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circle</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .square {
+        width: 500px;
+        height: 500px;
+        background-color: red;
+      }
+      .circle {
+        margin-top: 20px;
+        border-radius: 100%;
+      }
+      .half {
+        /* children parent relation */
+        /* percetage relative to its parent*/
+        width: 50%;
+        height: 50%;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="square">square</div>
+    <div class="square circle">circle</div>
+    <div>
+      <h2>UNITS</h2>
+      <p style="font-size: 16px">hello world - 16px</p>
+      <p style="font-size: 32px">hello world - 32px</p>
+      <p style="font-size: 1rem">hello world - 1rem</p>
+      <p style="font-size: 2rem">hello world - 2rem</p>
+      <div class="square">
+        <div class="half">half</div>
+      </div>
+    </div>
+  </body>
+</html>

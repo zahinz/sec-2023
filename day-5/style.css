@@ -1,0 +1,135 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  /* border: solid red 1px; */
+}
+
+html,
+body {
+  height: auto;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  cursor: pointer;
+  transition: all 200ms;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.right {
+  width: 50%;
+}
+
+.left {
+  width: 50%;
+}
+
+#hero .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5%;
+}
+
+#hero .left h1 {
+  font-size: 4rem;
+}
+
+#hero .right {
+  position: relative;
+}
+
+.bi-emoji-sunglasses-fill {
+  font-size: 100px;
+  color: hotpink;
+}
+
+.circle-1 {
+  aspect-ratio: 1;
+  width: 40%;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  transition: all 500ms;
+  border: solid red 1px;
+}
+
+.circle-2 {
+  aspect-ratio: 1;
+  width: 50%;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  /* transition: all 1000ms; */
+  border: solid red 1px;
+}
+
+.circle-2:hover {
+  background-color: pink;
+  cursor: not-allowed;
+}
+
+/* css selector */
+#hero .right .circle-1 {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+
+#hero .right .circle-2 {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
+
+/* when tablet @ screen < 800px && >600px flex direction = column */
+@media (min-width: 600px) and (max-width: 800px) {
+  .circle-1 {
+    background-color: yellow;
+  }
+}
+
+/* when mobile @ screen < 600px flex direction = column */
+@media (max-width: 600px) {
+  section {
+    flex-direction: column;
+  }
+  .right {
+    width: 100%;
+  }
+
+  .left {
+    width: 100%;
+  }
+  .circle-1 {
+    background-color: green;
+  }
+  #hero .left {
+    align-items: center;
+    padding-right: 5%;
+  }
+
+  #hero .left h1 {
+    font-size: 2rem;
+  }
+}

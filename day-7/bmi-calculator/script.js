@@ -6,6 +6,7 @@ let bmiAdviceDOM = document.querySelector("#bmi-advice");
 // add event listener click at button
 calculateBtnDOM.addEventListener("click", function (e) {
   e.preventDefault();
+  console.log(e);
   console.log(weightDOM.value, heightDOM.value);
   // calculate
 

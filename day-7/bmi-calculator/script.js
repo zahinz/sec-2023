@@ -13,8 +13,7 @@ calculateBtnDOM.addEventListener("click", function (e) {
   // condition based on bmi category
 
   // insert new text
-  bmiAdviceDOM.innerText =
-    parseInt(weightDOM.value) + parseInt(heightDOM.value);
+  bmiAdviceDOM.innerText = weightDOM.value;
 });
 
 // get the value from heightDOM, weightDOM

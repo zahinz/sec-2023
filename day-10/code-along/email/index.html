@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email</title>
+  </head>
+  <body>
+    <h1>Email me</h1>
+    <div style="display: flex; flex-direction: column">
+      <input type="text" name="name" placeholder="Your name" />
+      <input type="email" name="_replyto" placeholder="Your email" />
+      <textarea
+        name="message"
+        id="message"
+        cols="30"
+        rows="10"
+        placeholder="Your message"
+      ></textarea>
+      <a
+        style="
+          all: unset;
+          background-color: blue;
+          border-radius: 4px;
+          padding: 4px 8px;
+          color: white;
+          cursor: pointer;
+        "
+        id="sendEmailButton"
+        href=""
+        >Send message</a
+      >
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

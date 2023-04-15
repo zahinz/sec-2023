@@ -1,22 +1,48 @@
+import { useNavigate } from "react-router-dom";
+
 function JobCard(props: any) {
+  //  function to detect if the year is 2023, isNew === true
+  const date = new Date(props.job.post_date);
+  const isNew = date.getFullYear() === 2023;
+
+  // navigation function
+  const navigate = useNavigate();
+
   return (
-    <div className="border p-4 rounded-md w-[350px] space-y-4">
+    <div
+      onClick={() => {
+        navigate(`/job/${props.job.id}`);
+      }}
+      className="border p-4 rounded-md w-[350px] space-y-4 cursor-pointer"
+    >
       <div>
-        <h4 className="text-xl font-medium">{props.job}</h4>
-        <p>{props.company}</p>
+        <h4 className="text-xl font-medium inline-block">{props.job.job}</h4>
+        {/* condition rendering here, render if isNew === true by using tenary operator*/}
+        {isNew ? (
+          <span className="bg-green-300 inline-block px-1 text-sm text-gray-700 ml-2 rounded-sm">
+            New
+          </span>
+        ) : null}
+        <p>{props.job.company}</p>
       </div>
       <div>
-        <p>🗓 Posted on 31st Mar 2023</p>
-        <p>📍 Kuala Lumpur</p>
-        <p>💼 Full time</p>
+        <p>🗓 Posted on {props.job.post_date}</p>
+        <p>📍 {props.job.district}</p>
+        <p className="capitalize">💼 {props.job.work_type}</p>
       </div>
       <div className="space-x-1">
-        <p className="bg-gray-200 py-1 px-2 inline-block rounded">
-          Kuala Lumpur
-        </p>
-        <p className="bg-gray-200 p-1 inline-block rounded">React JS</p>
+        {props.job.stacks.map((stack: string, index: number) => {
+          return (
+            <p
+              key={index}
+              className="bg-gray-200 p-1 inline-block rounded capitalize"
+            >
+              {stack}
+            </p>
+          );
+        })}
       </div>
-      <p>Added on 31st March 2023</p>
+      <p>Added on {props.job.post_date}</p>
     </div>
   );
 }

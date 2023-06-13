@@ -8,16 +8,13 @@ import validatorResponse from "./middleware/validatorResponse.js";
 import isAuthenticated from "./middleware/isAuthenticated.js";
 import logout from "./controller/auth/logout.js";
 import isAdmin from "./middleware/isAdmin.js";
-
-const PORT = 8080;
+import checkStatus from "./controller/health/checkStatus.js";
 
 const app = express();
 app.use(express.json());
 
 // public routes
-app.get("/", (req, res) => {
-  res.status(200).json({ status: "ok" });
-});
+app.get("/", checkStatus);
 app.get("/public", (req, res) =>
   res.status(200).json({ message: "Public route" })
 );
@@ -48,6 +45,4 @@ app.get("/api/users", isAuthenticated, listAll);
 app.get("/api/users/:username", isAuthenticated, view);
 app.put("/api/logout", isAuthenticated, logout);
 
-app.listen(PORT, () => {
-  console.log("Server run on port 8080");
-});
+export default app;

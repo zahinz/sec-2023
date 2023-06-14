@@ -3,6 +3,7 @@ import Logo from "../components/Logo";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import useLocalStorage from "../hook/useLocalStorage";
+import { HOST } from "../api";
 
 const Login = () => {
   const [isLoading, setLoading] = useState(false);
@@ -20,7 +21,7 @@ const Login = () => {
     setLoading(true);
     // async function then = Promise:resolved, catch = Promise:reject, finally = Promise:fetched
     axios
-      .post("http://localhost:8080/api/login", {
+      .post(`${HOST}/api/login`, {
         identifier,
         password,
       })

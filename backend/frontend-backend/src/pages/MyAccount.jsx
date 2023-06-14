@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import useLocalStorage from "../hook/useLocalStorage";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { HOST } from "../api";
 
 const MyAccount = () => {
   const [jwt, setJwt] = useLocalStorage("token", "");
@@ -19,7 +20,7 @@ const MyAccount = () => {
 
     // run get api
     axios
-      .get("http://localhost:8080/private", {
+      .get(`${HOST}/private`, {
         headers: { Authorization: `Bearer ${jwt}` },
       })
       .then(function (response) {

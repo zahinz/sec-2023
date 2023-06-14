@@ -77,20 +77,53 @@ const MyAccount = () => {
           <h3 style={{ marginTop: "3rem" }}>User information</h3>
           <div style={{ marginTop: "1rem" }}>
             <p>Username</p>
-            <p style={{ fontWeight: "bold" }}>{user?.username || "no data"}</p>
+            <p style={{ display: "inline", fontWeight: "bold" }}>
+              {user?.username || "no data"}
+            </p>
+            {isAdmin && <AdminControl />}
           </div>
           <div style={{ marginTop: "1rem" }}>
             <p>Email</p>
-            <p style={{ fontWeight: "bold" }}>{user?.email || "no data"}</p>
+            <p style={{ display: "inline", fontWeight: "bold" }}>
+              {user?.email || "no data"}
+            </p>
+            {isAdmin && <AdminControl />}
           </div>
           <div style={{ marginTop: "1rem" }}>
             <p>Admin status</p>
-            <p style={{ fontWeight: "bold" }}>
+            <p style={{ display: "inline", fontWeight: "bold" }}>
               {user?.isAdmin ? "True" : "False"}
             </p>
+            {isAdmin && <AdminControl />}
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+const AdminControl = () => {
+  return (
+    <div style={{ display: "inline", marginLeft: "1rem" }}>
+      <span
+        style={{
+          textDecoration: "underline",
+          color: "blue",
+          cursor: "pointer",
+        }}
+      >
+        Edit
+      </span>
+      <span
+        style={{
+          textDecoration: "underline",
+          marginLeft: "0.5rem",
+          color: "red",
+          cursor: "pointer",
+        }}
+      >
+        Delete
+      </span>
     </div>
   );
 };

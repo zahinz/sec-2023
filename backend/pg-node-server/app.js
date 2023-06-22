@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import register from "./controller/auth/register.js";
 import login from "./controller/auth/login.js";
 import view from "./controller/user/view.js";
@@ -9,9 +10,11 @@ import isAuthenticated from "./middleware/isAuthenticated.js";
 import logout from "./controller/auth/logout.js";
 import isAdmin from "./middleware/isAdmin.js";
 import checkStatus from "./controller/health/checkStatus.js";
+import downloadUserInformation from "./controller/user/downloadUserInfo.js";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // public routes
 app.get("/", checkStatus);
@@ -43,6 +46,7 @@ app.get("/admin", isAuthenticated, isAdmin, (req, res) =>
 );
 app.get("/api/users", isAuthenticated, listAll);
 app.get("/api/users/:username", isAuthenticated, view);
+app.get("/api/users/download/:id", isAuthenticated, downloadUserInformation);
 app.put("/api/logout", isAuthenticated, logout);
 
 export default app;

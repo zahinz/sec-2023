@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import MyAccount from "./pages/MyAccount";
 import Admin from "./pages/Admin";
+import Users from "./pages/Users";
 
 function App() {
   const router = createBrowserRouter([
@@ -26,6 +27,10 @@ function App() {
     {
       path: "/admin",
       element: <Admin />,
+    },
+    {
+      path: "/users",
+      element: <Users />,
     },
   ]);
 

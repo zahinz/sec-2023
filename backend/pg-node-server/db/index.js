@@ -1,10 +1,12 @@
 import pkg from "pg";
 const { Pool } = pkg;
+import "dotenv/config";
 
 const db = new Pool({
-  host: "localhost",
-  user: "zahin",
-  database: "my-blog",
+  host: process.env.DB_HOST || "localhost",
+  user: process.env.DB_USER || "zahin",
+  database: process.env.DB_DATABASE || "blog",
+  password: process.env.DB_PASSWORD,
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
